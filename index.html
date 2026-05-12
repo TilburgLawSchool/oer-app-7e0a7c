@@ -1,0 +1,214 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Preview</title>
+<base href="https://preview.local/" />
+<script src="https://cdn.tailwindcss.com"></script>
+<script type="importmap">{"imports":{"react":"https://esm.sh/react@18.3.1","react-dom":"https://esm.sh/react-dom@18.3.1","react-dom/client":"https://esm.sh/react-dom@18.3.1/client","react/jsx-runtime":"https://esm.sh/react@18.3.1/jsx-runtime","react/jsx-dev-runtime":"https://esm.sh/react@18.3.1/jsx-dev-runtime","/node/buffer.mjs":"https://esm.sh/node/buffer.mjs"}}</script>
+<style>
+  html, body, #root { height: 100%; margin: 0; }
+  body { font-family: ui-sans-serif, system-ui, -apple-system, sans-serif; }
+  
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+  window.__MODULES__ = {"src/main.tsx":"import React from \"react\";\nimport { createRoot } from \"react-dom/client\";\nimport App from \"./App\";\n\nconst rootElement = document.getElementById(\"root\");\nif (rootElement) {\n  const root = createRoot(rootElement);\n  root.render(\n    <React.StrictMode>\n      <App />\n    </React.StrictMode>\n  );\n} else {\n  console.error(\"Root element not found\");\n}\n","src/App.tsx":"import React from \"react\";\n\nconst App = () => {\n  return (\n    <div className=\"min-h-screen bg-white\">\n      {/* Header */}\n      <header className=\"bg-[#0c2340] text-white p-4\">\n        <div className=\"container mx-auto flex justify-between items-center\">\n          <h1 className=\"text-2xl font-bold\">Tilburg University</h1>\n          <nav>\n            <ul className=\"flex space-x-4\">\n              <li><a href=\"#\" className=\"hover:text-[#b46b2a]\">Home</a></li>\n              <li><a href=\"#\" className=\"hover:text-[#b46b2a]\">OER</a></li>\n              <li><a href=\"#\" className=\"hover:text-[#b46b2a]\">About</a></li>\n              <li><a href=\"#\" className=\"hover:text-[#b46b2a]\">Contact</a></li>\n            </ul>\n          </nav>\n        </div>\n      </header>\n\n      {/* Hero Section */}\n      <section className=\"bg-[#008fc7] text-white py-20\">\n        <div className=\"container mx-auto text-center\">\n          <h2 className=\"text-4xl font-bold mb-4\">Open Educational Resources</h2>\n          <p className=\"text-xl mb-8\">Explore our collection of free educational materials</p>\n          <button className=\"bg-[#b46b2a] hover:bg-[#a05a25] text-white font-bold py-2 px-4 rounded\">Browse Resources</button>\n        </div>\n      </section>\n\n      {/* Content Sections */}\n      <main className=\"container mx-auto py-12\">\n        <section className=\"mb-12\">\n          <h3 className=\"text-2xl font-bold text-[#0c2340] mb-4\">Featured Resources</h3>\n          <div className=\"grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8\">\n            <div className=\"bg-[#f0f4e9] p-6 rounded-lg\">\n              <h4 className=\"text-xl font-bold text-[#0c2340] mb-2\">Resource 1</h4>\n              <p className=\"text-[#0c2340]\">Description of resource 1</p>\n            </div>\n            <div className=\"bg-[#f0f4e9] p-6 rounded-lg\">\n              <h4 className=\"text-xl font-bold text-[#0c2340] mb-2\">Resource 2</h4>\n              <p className=\"text-[#0c2340]\">Description of resource 2</p>\n            </div>\n            <div className=\"bg-[#f0f4e9] p-6 rounded-lg\">\n              <h4 className=\"text-xl font-bold text-[#0c2340] mb-2\">Resource 3</h4>\n              <p className=\"text-[#0c2340]\">Description of resource 3</p>\n            </div>\n          </div>\n        </section>\n\n        <section>\n          <h3 className=\"text-2xl font-bold text-[#0c2340] mb-4\">About OER</h3>\n          <p className=\"text-[#0c2340]\">Open Educational Resources (OER) are teaching, learning, and research materials in any medium, digital or otherwise, that reside in the public domain or have been released under an open license that permits no-cost access, use, adaptation, and redistribution.</p>\n        </section>\n      </main>\n\n      {/* Footer */}\n      <footer className=\"bg-[#0c2340] text-white py-8\">\n        <div className=\"container mx-auto text-center\">\n          <p>&copy; 2023 Tilburg University. All rights reserved.</p>\n        </div>\n      </footer>\n    </div>\n  );\n};\n\nexport default App;"};
+  window.__ENTRY__ = "src/main.tsx";
+  window.__NEXT_BARE_SPEC_MAP__ = {};
+  window.addEventListener('error', (event) => {
+    try {
+      parent.postMessage({ __preview_error: true, message: event.message, stack: event.error && event.error.stack }, '*');
+    } catch {}
+  });
+  window.addEventListener('unhandledrejection', (event) => {
+    try {
+      parent.postMessage({ __preview_error: true, message: String((event.reason && event.reason.message) || event.reason), stack: event.reason && event.reason.stack }, '*');
+    } catch {}
+  });
+</script>
+<script type="module">
+  const { transform } = await import("https://esm.sh/sucrase@3.35.0/es2022/sucrase.bundle.mjs");
+  const sources = window.__MODULES__ || {};
+  const blobUrls = new Map();
+  const nextBareSpecMap = window.__NEXT_BARE_SPEC_MAP__ || {};
+  const regexPatterns = {"fromSpec":"(from\\s*)([\"'])([^\"']+)([\"'])","dynamicImport":"(import\\s*\\(\\s*)([\"'])([^\"']+)([\"'])","bareImport":"(import\\s+)([\"'])([^\"']+)([\"'])","dependency":"(?:from\\s*|import\\s*\\(\\s*|import\\s+)[\"']([^\"']+)[\"']"};
+  const importMapKeys = new Set(Object.keys(({"imports":{"react":"https://esm.sh/react@18.3.1","react-dom":"https://esm.sh/react-dom@18.3.1","react-dom/client":"https://esm.sh/react-dom@18.3.1/client","react/jsx-runtime":"https://esm.sh/react@18.3.1/jsx-runtime","react/jsx-dev-runtime":"https://esm.sh/react@18.3.1/jsx-dev-runtime","/node/buffer.mjs":"https://esm.sh/node/buffer.mjs"}}).imports));
+  const previewBase = "https://preview.local/";
+
+  try {
+    const currentHref = String((window.location && window.location.href) || '');
+    if (!/^https?:/i.test(currentHref)) {
+      window.history.replaceState({}, '', previewBase + (window.location.hash || ''));
+    }
+  } catch {}
+
+  function candidatePaths(spec, fromPath) {
+    if (!spec) return [];
+
+    if (spec.startsWith('@/') || spec.startsWith('~/')) {
+      const raw = spec.slice(2);
+      return expandCandidates(raw);
+    }
+
+    if (spec.startsWith('/')) {
+      const raw = spec.slice(1);
+      return expandCandidates(raw);
+    }
+
+    if (spec.startsWith('.')) {
+      const fromDir = fromPath.split('/').slice(0, -1);
+      const parts = spec.split('/');
+      const stack = [...fromDir];
+      for (const part of parts) {
+        if (!part || part === '.') continue;
+        if (part === '..') stack.pop();
+        else stack.push(part);
+      }
+      return expandCandidates(stack.join('/'));
+    }
+
+    return [];
+  }
+
+  function expandCandidates(base) {
+    const prefixes = ['', 'src/', 'app/'];
+    const values = [];
+    for (const prefix of prefixes) {
+      const combined = prefix + base;
+      const withoutDotSlash = combined.startsWith('./') ? combined.slice(2) : combined;
+      const path = withoutDotSlash.startsWith('/') ? withoutDotSlash.slice(1) : withoutDotSlash;
+      values.push(
+        path,
+        path + '.tsx',
+        path + '.ts',
+        path + '.jsx',
+        path + '.js',
+        path + '/index.tsx',
+        path + '/index.ts',
+        path + '/index.jsx',
+        path + '/index.js',
+      );
+    }
+    return [...new Set(values)];
+  }
+
+  function resolveProjectModule(spec, fromPath) {
+    for (const candidate of candidatePaths(spec, fromPath)) {
+      if (sources[candidate] !== undefined) return candidate;
+    }
+    return null;
+  }
+
+  function normalizeNextShimSpec(spec) {
+    if (!spec) return spec;
+    if (nextBareSpecMap[spec]) return spec;
+
+    const normalized = spec
+      .replace(/^https?:\/\/esm\.sh\/?(?:\*?)/, '')
+      .replace(/[?#].*$/, '')
+      .replace(/^\/+/, '');
+
+    return nextBareSpecMap[normalized] ? normalized : spec;
+  }
+
+  function resolveDependency(spec, fromPath) {
+    const normalizedSpec = normalizeNextShimSpec(spec);
+    return resolveProjectModule(normalizedSpec, fromPath) || nextBareSpecMap[normalizedSpec] || null;
+  }
+
+  function resolveSpec(spec, fromPath) {
+    const normalizedSpec = normalizeNextShimSpec(spec);
+    const projectPath = resolveProjectModule(normalizedSpec, fromPath);
+    if (projectPath) return blobUrls.get(projectPath) || null;
+
+    const nextShim = nextBareSpecMap[normalizedSpec];
+    if (nextShim) return blobUrls.get(nextShim) || null;
+
+    if (importMapKeys.has(normalizedSpec)) return null;
+    if (spec.startsWith('http://') || spec.startsWith('https://') || spec.startsWith('//') || spec.startsWith('data:')) return null;
+
+    const sep = spec.includes('?') ? '&' : '?';
+    return 'https://esm.sh/*' + spec + sep + 'target=es2022';
+  }
+
+  function rewriteSpecifiers(code, ownPath) {
+    const fromPattern = new RegExp(regexPatterns.fromSpec, 'g');
+    const dynamicImportPattern = new RegExp(regexPatterns.dynamicImport, 'g');
+    const bareImportPattern = new RegExp(regexPatterns.bareImport, 'g');
+    const swap = (full, prefix, quote, spec) => {
+      const url = resolveSpec(spec, ownPath);
+      return url ? prefix + quote + url + quote : full;
+    };
+    return code
+      .replace(fromPattern, (full, prefix, openQuote, spec, closeQuote) => {
+        if (openQuote !== closeQuote) return full;
+        return swap(full, prefix, openQuote, spec);
+      })
+      .replace(dynamicImportPattern, (full, prefix, openQuote, spec, closeQuote) => {
+        if (openQuote !== closeQuote) return full;
+        return swap(full, prefix, openQuote, spec);
+      })
+      .replace(bareImportPattern, (full, prefix, openQuote, spec, closeQuote) => {
+        if (openQuote !== closeQuote) return full;
+        return swap(full, prefix, openQuote, spec);
+      });
+  }
+
+  try {
+    const transpiled = {};
+    for (const path of Object.keys(sources)) {
+      const isTS = path.endsWith('.ts') || path.endsWith('.tsx');
+      const isJSX = path.endsWith('.tsx') || path.endsWith('.jsx') || path.endsWith('.js');
+      try {
+        transpiled[path] = transform(sources[path], {
+          transforms: [isTS ? 'typescript' : null, isJSX ? 'jsx' : null].filter(Boolean),
+          jsxRuntime: 'automatic',
+          production: true,
+          filePath: path,
+        }).code;
+      } catch (err) {
+        throw new Error('Transform failed in ' + path + ': ' + ((err && err.message) || err));
+      }
+    }
+
+    const order = [];
+    const visited = new Set();
+    const visiting = new Set();
+
+    function visit(path) {
+      if (visited.has(path) || visiting.has(path)) return;
+      visiting.add(path);
+      const code = transpiled[path] || '';
+      const regex = new RegExp(regexPatterns.dependency, 'g');
+      let match;
+      while ((match = regex.exec(code)) !== null) {
+        const dep = resolveDependency(match[1], path);
+        if (dep) visit(dep);
+      }
+      visiting.delete(path);
+      visited.add(path);
+      order.push(path);
+    }
+
+    for (const path of Object.keys(transpiled)) visit(path);
+
+    for (const path of order) {
+      const rewritten = rewriteSpecifiers(transpiled[path], path);
+      blobUrls.set(path, URL.createObjectURL(new Blob([rewritten], { type: 'text/javascript' })));
+    }
+
+    const entryUrl = blobUrls.get(window.__ENTRY__);
+    if (!entryUrl) throw new Error('Entry not found: ' + window.__ENTRY__);
+    import(entryUrl).catch((error) => {
+      document.body.innerHTML = '<pre style="padding:24px;font:13px ui-monospace,monospace;color:#b91c1c;white-space:pre-wrap">' + (error && error.stack || error) + '</pre>';
+    });
+  } catch (error) {
+    document.body.innerHTML = '<pre style="padding:24px;font:13px ui-monospace,monospace;color:#b91c1c;white-space:pre-wrap">' + (error && error.stack || error) + '</pre>';
+  }
+</script>
+</body>
+</html>
